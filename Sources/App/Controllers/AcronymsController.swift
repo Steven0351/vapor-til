@@ -3,6 +3,7 @@ import Fluent
 
 struct AcronymsController: RouteCollection {
   func boot(router: Router) throws {
+    // Required to set up routes
     let acronymsRoutes = router.grouped("api", "acronyms")
     acronymsRoutes.get(use: getAllHandler)
     acronymsRoutes.post(Acronym.self, use: createHandler)
