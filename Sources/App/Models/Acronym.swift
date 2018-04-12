@@ -31,4 +31,8 @@ extension Acronym: Migration {
       try builder.addReference(from: \.userID, to: \User.id)
     }
   }
+  
+  var categories: Siblings<Acronym, Category, AcronymCategoryPivot> {
+    return siblings()
+  }
 }
